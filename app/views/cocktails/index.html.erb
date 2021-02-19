@@ -1,12 +1,16 @@
-<h1>Cocktails#index</h1>
+<div class="navbar navbar-expand-sm navbar-light">
+  <h1>The Best Cocktails in town</h1>
+</div>
 
 <div class="container">
-  <%= link_to "Create your cocktail", new_cocktail_path %>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </li>
-    <% end %>
-  </ul>
+  <div>
+    <%= link_to "Create your cocktail", new_cocktail_path %>
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+      <li>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
