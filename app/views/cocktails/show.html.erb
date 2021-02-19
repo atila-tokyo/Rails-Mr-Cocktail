@@ -1,3 +1,14 @@
 <h1>Cocktails#show</h1>
 
   <%= @cocktail.name %>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+    <li>
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+      <%= link_to "Remove this dose", dose_path(dose), method: :delete %>
+    </li>
+    <% end %>
+    <%= link_to "Create a dose", new_cocktail_dose_path(@cocktail) %>
+    <%= link_to "Return to main", cocktails_path %>
+  </ul>
