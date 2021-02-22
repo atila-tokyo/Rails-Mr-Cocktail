@@ -2,5 +2,6 @@
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name, label: false, input_html: { placeholder: "Find your cocktail", value: nil } %>
-  <%= f.submit, class: 'btn btn-success' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
 <% end %>

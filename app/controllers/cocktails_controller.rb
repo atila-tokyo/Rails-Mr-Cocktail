@@ -8,9 +8,7 @@ before_action :set_cocktail, only: %i[show edit update destroy]
     @cocktails = Cocktail.where('lower(name) like ?', "%#{@search[:name].downcase}") if @search.present?
   end
 
-  def show
-    @cocktail = Cocktail.find(params[:id])
-  end
+  def show; end
 
   def new
     @cocktail = Cocktail.new
@@ -44,12 +42,11 @@ before_action :set_cocktail, only: %i[show edit update destroy]
 
   private
 
-
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

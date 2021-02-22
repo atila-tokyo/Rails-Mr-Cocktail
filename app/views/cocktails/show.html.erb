@@ -6,6 +6,7 @@
     <li>
       <%= dose.description %>
       <%= dose.ingredient.name %>
+      <%= cl_image_tag dose.photo.key, height: 300, width: 400, crop: :fill %>
       <%= link_to "Remove this dose", dose_path(dose), method: :delete %>
     </li>
     <% end %>
