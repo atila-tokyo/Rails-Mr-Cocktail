@@ -1,6 +1,6 @@
 <h1> Create your own Cocktail </h1>
 
 <%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
+  <%= f.input :name, label: false, input_html: { placeholder: "Find your cocktail", value: nil } %>
+  <%= f.submit, class: 'btn btn-success' %>
 <% end %>

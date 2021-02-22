@@ -1,3 +1,50 @@
 // Place all the styles related to the Cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  z-index: -1;
+  background-image: url(https://toledolibrary.s3.amazonaws.com/uploads/blog-images/garnished-cocktails.jpeg)
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}

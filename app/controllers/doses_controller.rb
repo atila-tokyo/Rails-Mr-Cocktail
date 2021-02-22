@@ -1,4 +1,13 @@
 class DosesController < ApplicationController
+before_action :set_dose, only: %i[show edit update destroy]
+  def index
+    @doses = Dose.all
+    # @search = params[:search][:name]
+    @search = params.dig :search, :name
+    @doses = Dose.where('lower(name) like ?', "%#{@search[:name].downcase}") if @search.present?
+  end
+
+  def show; end
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
@@ -7,11 +16,9 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new(dose_params)
 
-    @cocktail = Cocktail.find(params[:cocktail_id])
-
     @dose.cocktail = @cocktail
       if @dose.save
-        redirect_to cocktail_path(@cocktail)
+        redirect_to @dose
       else
         render :new
       end
